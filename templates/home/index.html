@@ -1,0 +1,32 @@
+{% extends 'base.html' %}4
+{% load static %}
+
+<!-- Enter the tite of the page in this block -->
+{% block title %}
+    <title>Home | Sri Sathya Sai Bhajans</title>
+{% endblock title %}
+
+
+<!-- Edit the CSS of the page -->
+<style>
+    .banner {
+        position: relative;
+    }
+    .banner-content {
+        position: absolute;
+        top: 25%;
+        color: #fff;
+        padding: 20px;
+    }
+</style>
+
+
+<!-- Enter the page content in this block -->
+{% block content %}
+    <div class="banner">
+        <img src="{% static 'imgs/sai_home_banner.png' %}" style="min-width: 100%; max-height: 561px;">
+        <div class="banner-content" style="position: absolute; top: 50%; color: #fff; padding-left: 620px;">
+            <center><h1>Home<h1></center>
+        </div>
+    </div>
+{% endblock content %}
