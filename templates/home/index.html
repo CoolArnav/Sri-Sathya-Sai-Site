@@ -1,4 +1,4 @@
-{% extends 'base.html' %}4
+{% extends 'base.html' %}
 {% load static %}
 
 <!-- Enter the tite of the page in this block -->
@@ -13,20 +13,57 @@
         position: relative;
     }
     .banner-content {
+        width: 100%;
         position: absolute;
         top: 25%;
-        color: #fff;
+        color: #fff; 
         padding: 20px;
+        transform: translateY(-50%);
+        text-align: center;
     }
 </style>
 
 
 <!-- Enter the page content in this block -->
 {% block content %}
+    <!--Welcome banner section-->
     <div class="banner">
-        <img src="{% static 'imgs/sai_home_banner.png' %}" style="min-width: 100%; max-height: 561px;">
-        <div class="banner-content" style="position: absolute; top: 50%; color: #fff; padding-left: 620px;">
-            <center><h1>Home<h1></center>
+        <img src="{% static 'imgs/sai_home_banner.png' %}" style="min-width: 100%; min-height: 100%;">
+        <div class="banner-content" style="width: 100%; position: absolute; top: 50%; color: #fff; transform: translateY(-50%); text-align: center;">
+            <h1 style="font-size: 70px; margin-top: 80px;  text-decoration: underline; text-decoration-color: #009688;">WELCOME</h1>
+            <p style="margin: 20px auto; font-weight: 100; line-height: 25px;">Welcome to the website of Sri Sathya Sai Bhajans. All your stotras &amp songs available in one place</p>
+            <div>
+                <button class="btn btn-success btn-lg rounded-pill" style="background-color: #009688;" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions">
+                    Get Started >
+                </button>
+                
+            </div>
         </div>
+    </div>
+
+
+    <!--Off Canvas for showing the user tips-->
+    <div class="offcanvas offcanvas-start" data-bs-scroll="true" tabindex="-1" id="offcanvasWithBothOptions" aria-labelledby="offcanvasWithBothOptionsLabel">
+        <div class="offcanvas-header">
+          <h5 class="offcanvas-title" id="offcanvasWithBothOptionsLabel">Getting Started</h5>
+          <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+          <p>Welcome! Here are some things to do...</p>
+          <div class="d-grid gap-2">
+            <a class="btn btn-success" href="#" role="button">Link</a>
+            <a class="btn btn-success" href="#" role="button">Link</a>
+            <a class="btn btn-success" href="#" role="button">Link</a>
+            <a class="btn btn-success" href="#" role="button">Link</a>
+            <a class="btn btn-success" href="#" role="button">Link</a>
+          <br>
+          </div>
+          <button class="btn btn-outline-danger rounded-pill btn-lg" role="button" data-bs-dismiss="offcanvas" aria-label="Close">I'm Done!</button><br><br>
+        </div>
+    </div>
+    
+
+    <div id="about">
+
     </div>
 {% endblock content %}
