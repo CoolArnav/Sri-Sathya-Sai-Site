@@ -7,4 +7,7 @@ def index(request):
     return render(request, 'home/index.html')
 
 def all(request):
-    return render(request, 'songs/all.html')
+    context = {
+        'songs' : Song.objects.all()
+    }
+    return render(request, 'songs/all.html', context)

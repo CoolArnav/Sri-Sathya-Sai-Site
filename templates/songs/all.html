@@ -6,5 +6,28 @@
 {% endblock title %}
 
 {% block content %}
-    <h1>All Songs</h1>
+    <br>
+    <div class="container">
+        <h1 align="center">All Songs</h1>
+        <hr>
+
+        <!--Accordian-->
+        <div class="accordion" id="accordionExample">
+            {% for song in songs %}
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="headingOne">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+                    <img style="height: 50px; width: 50px; margin-right: 10px;" class="rounded-circle" src="{{ song.god.image.url }}" alt="Deity Image">
+                    {{ song.name }}
+                </button>
+              </h2>
+              <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                <div class="accordion-body">{{ song.description }}<br><b>Raga:</b> {{ song.Raga }}</div>
+              </div>
+            </div>
+            {% endfor %}
+        </div>
+          <!--End Accordian-->
+    </div>
+    
 {% endblock content %}

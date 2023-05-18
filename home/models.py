@@ -2,18 +2,28 @@ from django.db import models
 
 
 class SortFilter(models.Model):
+    id = models.AutoField(primary_key=True)
     name = models.CharField(max_length=255)
     description = models.TextField(default="Sort Filter Desciption")
 
     def __str__(self):
          return self.name
+    
 
+class God(models.Model):
+     name = models.CharField(max_length=255)
+     description = models.TextField()
+     image = models.ImageField(upload_to="god_images", default="default.png")
+    
 
 class Song(models.Model):
+    id = models.AutoField(primary_key=True)
     name = models.CharField(max_length=255)
     description = models.TextField()
+    Raga = models.CharField(max_length=30, default="Sindhubhairavi")
     sort_filter = models.ForeignKey(SortFilter, on_delete=models.CASCADE)
-    audio_file = models.FileField(upload_to='Songs', max_length=10000)
+    audio_file = models.FileField(upload_to='media/songs', max_length=10000)
+    god = models.ForeignKey(God, on_delete=models.CASCADE, default=1)
 
     def __str__(self):
          return self.name
