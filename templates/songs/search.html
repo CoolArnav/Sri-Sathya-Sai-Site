@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+<title>Search Songs | Sri Sathya Sai Bhajans</title>
+{% endblock title %}
+
+{% block content %}
+    <br>
+    <div class="container">
+        <h1 align="center">Search Results</h1>
+        <hr>
+        {% if songs|length < 1 %}
+            <p>No search results</p>
+            Your Search query: <b>{{ query }}</b> did not match any documents.<br>
+            Suggestions:
+            <ul>
+                <li>Make sure that all words are spelled correctly.</li>
+                <li>Try Different keywords.</li>
+                <li>Try more general keywords.</li>
+                <li>Try fewer keywords.</li>
+            <ul>
+        {% endif %}
+        <!--Start List Group-->
+        <ul class="list-group list-group">
+          {% for song in songs %}
+          <a href="{% url 'song-detail' song.id %}" class="list-group-item list-group-item-action d-flex justify-content-between align-items-start">
+            <img style="height: 50px; width: 50px; margin-right: 10px;" class="rounded-circle" src="{{ song.god.image.url }}" alt="Deity Image">
+            <div class="ms-2 me-auto">
+              <div class="fw-bold">{{ song.name }}</div>
+              <i>Raga: {{ song.Raaga.name }}</i>
+            </div>
+            <span class="badge bg-danger rounded-pill">{{ song.god.name }}</span>
+          </a>
+          {% endfor %}
+        </ul>
+        <!--End List Group-->
+    </div>
+    
+{% endblock content %}

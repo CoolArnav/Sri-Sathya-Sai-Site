@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+<title>{{ object.name }} | Sri Sathya Sai Bhajans</title>
+{% endblock title %}
+
+{% block content %}
+    <br>
+    <div class="container">
+        <div class="card" style="width: 100%;">
+          <center>
+            <div class="card-body">
+              <h5 class="card-title">{{ song.name }}</h5>
+              <p class="card-text">{{ object.description }}</p>
+            </div>
+          </center>
+        </div>
+    </div>
+    
+{% endblock content %}

@@ -89,8 +89,8 @@
                 <a class="nav-link" href="#">Register</a>
               </li>
             </ul>
-            <form class="d-flex">
-              <input class="form-control me-2" type="search" placeholder="Search Songs..." aria-label="Search Songs">
+            <form method="get" action="/search" class="d-flex">
+              <input class="form-control me-2" type="search" placeholder="Search Songs..." aria-label="Search Songs" name="query" id="query">
               <button class="btn btn-warning" type="submit">Search</button>
             </form>
           </div>
@@ -101,6 +101,12 @@
 
         </div>
       </div>
+		{% for message in messages %}
+			<div class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert">
+				<strong>Message: </strong>{{ message }}
+        <button type="button" class="btn-close" aria-label="Close"></button>
+			</div>
+		{% endfor %}
         {% block content %}
         {% endblock content %}
     <!-- Optional JavaScript; choose one of the two! -->
