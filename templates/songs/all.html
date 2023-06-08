@@ -16,10 +16,16 @@
           <a href="{% url 'song-detail' song.id %}" class="list-group-item list-group-item-action d-flex justify-content-between align-items-start">
             <img style="height: 50px; width: 50px; margin-right: 10px;" class="rounded-circle" src="{{ song.god.image.url }}" alt="Deity Image">
             <div class="ms-2 me-auto">
-              <div class="fw-bold">{{ song.name }}</div>
+              <div class="fw-bold d-flex w-100 justify-content-between">
+                {{ song.name }}
+                <small>
+                    <i class="bi bi-heart"></i>
+                </small>
+              </div>
               <i>Raga: {{ song.Raaga.name }}</i>
             </div>
-            <span class="badge bg-danger rounded-pill">{{ song.god.name }}</span>
+            <span class="badge bg-danger rounded-pill">{{ song.god.name }}
+            </span>
           </a>
           {% endfor %}
         </ul>

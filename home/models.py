@@ -1,4 +1,5 @@
 from django.db import models
+from django.contrib.auth.models import User
 
 
 class SortFilter(models.Model):
@@ -35,6 +36,7 @@ class Song(models.Model):
     sort_filter = models.ForeignKey(SortFilter, on_delete=models.CASCADE)
     audio_file = models.FileField(upload_to='media/songs', max_length=10000)
     god = models.ForeignKey(God, on_delete=models.CASCADE, default=1)
+    favourite = models.ManyToManyField(User, related_name='favourite', blank=True)
 
     def __str__(self):
          return self.name
