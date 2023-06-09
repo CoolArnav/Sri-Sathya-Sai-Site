@@ -1,6 +1,6 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from django.views.generic import ListView, DetailView
-from django.http import HttpResponse
+from django.http import HttpResponse, HttpResponseRedirect
 from .models import Song, SortFilter
 from django.contrib import messages
 
@@ -48,3 +48,13 @@ def search(request):
         }
     return render(request, 'songs/search.html', context)
 
+
+"""
+def favourite_post(request, id):
+    song = get_object_or_404(Song, id=id)
+    if song.favourite.filter(id=request.user.id).exists():
+        song.favourite.remove(request.user)
+    else:
+        song.favourite.add(request.user)
+    return HttpResponseRedirect(song.get_absolute_url())
+"""
