@@ -16,7 +16,6 @@ def all(request):
     return render(request, 'songs/all.html', context)
 
 
-
 class SongListView(ListView):
     model = Song
     template_name = 'songs/all.html'

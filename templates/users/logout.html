@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block title %}
+    <title>Logout | Sri Sathya Sai Bhajans</title>
+{% endblock title %}
+
+{% block content %}
+<div class="container">
+    <br>
+    <h2>You have been Logged Out!</h2>
+        <div class="border-top pt-3">
+            <small class="text-muted">
+                <a class="ml-2" href="{% url 'login' %}">Log In Again</a>
+            </small>
+        </div>
+    </div>
+{% endblock content %}
