@@ -32,6 +32,8 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'jazzmin',
+
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -141,3 +143,32 @@ CRISPY_TEMPLATE_PACK = "bootstrap5"
 
 LOGIN_REDIRECT_URL = 'home'
 LOGIN_URL = 'login'
+
+# JAZZMIN SETTINGS
+
+JAZZMIN_SETTINGS = {
+    "site_title": "CoolDevGA Admin",
+    "site_header": "CoolDevGA Admin Panel",
+    "site_brand": "GA Administration",
+    "site_logo": "imgs/logo/icon-square.png",
+    "login_logo": None,
+    "welcome_sign": "Welcome Admin! Login to Continue.",
+    "copyright": "Swami Sundaram, CoolDevGA",
+    "icons": {
+        "auth": "fas fa-users-cog",
+        "auth.user": "fas fa-user",
+        "auth.Group": "fas fa-users",
+        "home.god": "fas fa-gopuram",
+        "home.song": "fas fa-music",
+        "home.raaga": "fas fa-book",
+        "home.sortfilter": "fas fa-sort",
+    },
+    "topmenu_links": [
+        {"name": "Main Site", "url": "home"},
+        {"name": "Admin Site", "url": "admin:index"},
+    ],
+    "use_google_fonts_cdn": True,
+    "navbar_fixed": True,
+    "footer_fixed": True,
+    "sidebar_fixed": True,
+}
