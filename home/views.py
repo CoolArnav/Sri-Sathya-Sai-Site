@@ -16,6 +16,13 @@ def all(request):
     return render(request, 'songs/all.html', context)
 
 
+def review(request):
+    context = {
+
+    }
+    return render(request, 'home/review.html', context)
+
+
 class SongListView(ListView):
     model = Song
     template_name = 'songs/all.html'
