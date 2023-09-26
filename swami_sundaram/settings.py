@@ -149,7 +149,7 @@ EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 EMAIL_HOST_USER = 'customer.cooldevga@gmail.com'
-EMAIL_HOST_PASSWORD = 'dyzmeimtcsdzrkjl'
+EMAIL_HOST_PASSWORD = 'fcfi tqzt shlc atcl'
 DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
 
 # JAZZMIN SETTINGS

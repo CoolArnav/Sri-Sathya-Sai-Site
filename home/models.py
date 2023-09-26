@@ -37,7 +37,7 @@ class Song(models.Model):
     audio_file = models.FileField(upload_to='media/songs', max_length=10000)
     god = models.ForeignKey(God, on_delete=models.CASCADE, default=1)
     lyrics_pdf = models.FileField(upload_to='lyrics', max_length=1000000000, null=True)
-    favourite = models.ManyToManyField(User, related_name='favourite', default='media/lyric/LYRIC_FILE_NOT_YET_UPLOADED.pdf', editable=False)
+    favourite = models.ManyToManyField(User, related_name='favourite', editable=False)
 
     def __str__(self):
          return self.name
