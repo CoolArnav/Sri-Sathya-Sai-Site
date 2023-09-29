@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from .forms import UserRegisterForm, UserUpdateForm
+from home.models import *
 
 
 def register(request):
@@ -36,3 +37,9 @@ def profile_update(request):
     }
 
     return render(request, 'users/profile_update.html', context)
+
+
+@login_required
+def favourite_list(request):
+    new = Song.objects.filter(favourite=request.user)
+    return render(request, 'users/favourites.html', {'new': new})

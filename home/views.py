@@ -2,6 +2,7 @@ from django.shortcuts import render, get_object_or_404
 from django.views.generic import ListView, DetailView
 from django.http import HttpResponse, HttpResponseRedirect
 from .models import Song, SortFilter
+from django.contrib.auth.decorators import login_required
 from django.contrib import messages
 
 
@@ -55,12 +56,15 @@ def search(request):
     return render(request, 'songs/search.html', context)
 
 
-"""
-def favourite_post(request, id):
+@login_required
+def favourite_add(request, id):
     song = get_object_or_404(Song, id=id)
-    if song.favourite.filter(id=request.user.id).exists():
+    if song.favourite.filter(id=request.id).exists():
         song.favourite.remove(request.user)
     else:
         song.favourite.add(request.user)
-    return HttpResponseRedirect(song.get_absolute_url())
-"""
+    return HttpResponse(request.META['HTTP_REFERER'])
+
+
+def error_404(request, exception):
+    return render(request, 'home/404.html')
