@@ -1,3 +1,4 @@
 # Sri-Sathya-Sai-Site
 A new CoolDevGA Project.
-@WorkInProgress
+All your Bhajans and Stotras in one place!
+Sign Up Now! 
